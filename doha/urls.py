@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^places.geojson', 'places.views.geojson'),
+    url(r'^save', 'places.views.save_geojson'),
 ]
