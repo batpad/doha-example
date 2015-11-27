@@ -17,7 +17,7 @@ def save_geojson(request):
         return HttpResponse(json.dumps({'error': 'no data'}))
     osm_id = data['properties']['osm_id']
     geom_string = json.dumps(data['geometry'])
-    feature_md5 = md5(geom_string + str(osm_id))
+    feature_md5 = md5(geom_string + str(osm_id)).hexdigest()
     try:
         existing_place = Place.objects.get(md5=feature_md5)
         existing_place.is_flooded = data['properties']['is_flooded']
