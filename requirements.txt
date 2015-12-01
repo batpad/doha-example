@@ -2,3 +2,4 @@ Django==1.8.7
 django-leaflet==0.17.0
 psycopg2==2.6.1
 wheel==0.24.0
+ox==2.3.692
