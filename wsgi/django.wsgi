@@ -22,6 +22,9 @@ monitor.track(os.path.abspath(os.path.dirname(__file__)))
 
 os.environ['DJANGO_SETTINGS_MODULE'] = project_module + '.settings'
 
-import django.core.handlers.wsgi
+# import django.core.handlers.wsgi
 
-application = django.core.handlers.wsgi.WSGIHandler()
+# application = django.core.handlers.wsgi.WSGIHandler()
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
